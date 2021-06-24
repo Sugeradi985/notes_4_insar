@@ -65,13 +65,22 @@ Thank you, Ivana
 Hi Ivana,
 
 first of all, QPS is a title which we used in a paper. However, as you have seen, Sarproz does not allow straight “PS” or “QPS” approaches. In fact, one can choose among many different options:
+
 a. Images graph. The Star graph is adopted for PS-like approaches. For other approaches, you can choose the images graph better suiting your case (MST, delaunay, small Bn’s, small Bt’s, sets of coherent interf with threshold on coherence, full graph, or your own custom graph)
+
 b. weights: you can weight the phase with the InSAR spatial coherence or with amplitude.
+
 c. filtered or unfiltered phase
+
 d. wrapped or (spatially) unwrapped phase
+
 e. deformation model (linear, polynomial, seasonal, non-parametric)
+
 If you choose “coherence” for weights, the sw automatically loads the phase from interferograms (which, by default, are filtered and corrected for the existing external topography). This is why, if you choose to use weights, the sw does not allow you to remove the external DEM: because the software assumes that the DEM has already been removed (from the interferograms).
+
 Please be aware of the following: if you choose to weight the analysis with the coherence, the sw automatically tries to read (from the disk) the interferograms according to the loaded images graph. If you generated some interferograms with DEM removal and some others without DEM removal, the sw at this moment cannot detect the difference and this may cause problems. [in the future we will record such settings for each interferogram]. However, if one or more interferograms are missing, the software re-estimates on a sparse-base all interferometric phases (if one or more interferograms are missing, all interferograms are ignored and re-calculated only on the selected sparse points).
+
 Since many options are involved, my suggestion is to carry out some experiments using the small are module. When you find out the best options for your case, you can apply them in the APS estimation.
+
 Let me know if anything is unclear.
 
