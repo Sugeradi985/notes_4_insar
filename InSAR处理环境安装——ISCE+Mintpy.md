@@ -32,7 +32,7 @@ conda环境的话，这里推荐大家安装**miniconda**，更轻量；
 
 下载完成后，按照如下步骤安装：
 
-（1）在home文件夹下创建tools文件夹，用以存放insar处理相关的软件和库包：
+##### （1）在home文件夹下创建tools文件夹，用以存放insar处理相关的软件和库包：
 
 打开终端（即Terminal，我习惯叫命令行）
 
@@ -44,16 +44,16 @@ mkdir -p ~/tools; cd ~/tools
 
 下载的Miniconda3-py**-Linux-x86_64.sh文件默认保存在Downloads文件夹中；
 
-（2）通过以下命令安装：
+##### （2）通过以下命令安装：
 
 ```shell
 bash ~/Downloads/Miniconda3-py**-Linux-x86_64.sh -b -p ~/tools/miniconda3
 ~/tools/miniconda3/bin/conda init bash
 ```
 
-（3）关闭终端，然后重新打开一个新的终端；**（这一步是为了让方才的设置生效）**
+##### （3）关闭终端，然后重新打开一个新的终端；**（这一步是为了让方才的设置生效）**
 
-（4）在终端中输入以下命令：
+##### （4）在终端中输入以下命令：
 
 ```shell
 conda config --add channels conda-forge
@@ -74,7 +74,7 @@ conda install wget git tree mamba --yes
 
 二是通过github发布的源码安装，是development版本，更新；
 
-##### 第一种方式，conda安装release版本：
+##### 第一种方式，conda安装release版本：（本人没有用过这种方式，仅供参考！！！）
 
 ```shell
 mamba install isce2 mintpy
@@ -82,7 +82,7 @@ mamba install isce2 mintpy
 
 一个命令行搞定！
 
-后续需要配置环境变量之类的可以参考
+**后续需要配置环境变量之类的可以参考第二种方式的（4）中的配置文件**
 
 ##### 第二种方式，是从源码安装，步骤多一些，但是不麻烦，就是粘粘粘~
 
@@ -90,7 +90,7 @@ mamba install isce2 mintpy
 
 不熟悉linux系统的同学，不用再动手配置了~
 
-（1）从github下载源码
+##### （1）从github下载源码
 
 ```shell
 cd ~/tools
@@ -122,7 +122,7 @@ github服务器在国外，如果下载太慢或者失败，建议逐一手动�
 
 ----------
 
-（2）创建虚拟环境
+##### （2）创建虚拟环境
 
 准备好了所有的源码文件后，进入到环境的配置步骤了；
 
@@ -135,7 +135,7 @@ conda activate insar
 
 **注意：这里需要设置一下python的版本，python3.10已经发布了，但是经过测试部分脚本运行会出错，因此我们用python3.9**
 
-（3）配置依赖库并安装isce和mintpy等
+##### （3）配置依赖库并安装isce和mintpy等
 
 首先是isce2：
 
@@ -161,7 +161,7 @@ python -m pip install scalene
 python -m pip install ipynb
 ```
 
-（4）配置环境变量
+##### （4）配置环境变量
 
 这一步直接使用yunjunz提供的配置文件就可以了，非常方便；
 
@@ -183,7 +183,7 @@ alias load_insar='conda activate insar; source ~/tools/conda_envs/insar/config.r
 
 可以测试一下成功与否。
 
-（5）测试安装
+##### （5）测试安装
 
 打开一个终端（Ctrl+Alt+T），输入：
 
@@ -198,8 +198,10 @@ topsApp.py -h            # 测试ISCE-2
 smallbaselineApp.py -h   # 测试MintPy
 ```
 
-如果看到提示信息，说明安装成功了！
+##### 如果看到提示信息，说明安装成功了！
 
 **如果遇到问题，建议参看yunjunz的教程： https://github.com/yunjunz/conda_envs
 
 **最后，感谢所有让insar开源处理软件安装和使用更容易的奉献者！
+
+**如有侵权，即为致歉，并请联系删除**
